@@ -2,6 +2,7 @@
   "name": "hacker-news-app",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -11,13 +12,14 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.43.0",
+    "webpack-node-externals": "^1.7.2",
     "yarn": "^1.22.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",
-    "eject": "react-scripts eject"
+    "start": "node ./build/index",
+    "build": "NODE_ENV=development webpack --config webpack.config.js --mode=development -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,5 +35,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-app": "^9.1.2",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "webpack-cli": "^3.3.11"
   }
 }
