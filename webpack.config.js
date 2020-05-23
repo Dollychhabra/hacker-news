@@ -12,7 +12,7 @@ module.exports = {
         NODE_ENV: '"production"',
       },
     }),
-    new Uglify()
+    new Uglify(),
   ],
   target: 'node',
 
