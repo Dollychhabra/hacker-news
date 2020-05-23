@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./build/server",
-    "build":"webpack --mode=development"
+    "build": "webpack --mode=development",
+    "test": "react-scripts test --passWithNoTests"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
