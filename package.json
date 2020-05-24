@@ -43,7 +43,8 @@
     "path": "^0.12.7",
     "prop-types": "^15.6.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "serialize-javascript": "^3.0.0"
   },
   "eslintConfig": {
     "extends": "react-app"
