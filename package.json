@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./build/server",
     "build": "webpack --mode=development",
-    "test": "cross-env NODE_ENV=test jest"
+    "test": "cross-env NODE_ENV=test jest",
+    "validate": "npm run test"
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -33,6 +34,7 @@
   },
   "dependencies": {
     "babel-jest": "^26.0.1",
+    "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "path": "^0.12.7",
     "prop-types": "^15.6.1",
