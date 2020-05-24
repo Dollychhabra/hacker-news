@@ -28,7 +28,20 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader',
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                useBuiltIns: 'entry',
+              },
+            ],
+            '@babel/preset-react',
+          ],
+          plugins: ['@babel/proposal-class-properties'],
+        },
       },
     ],
   },

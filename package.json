@@ -6,14 +6,25 @@
   "scripts": {
     "start": "node ./build/server",
     "build": "webpack --mode=development",
-    "test": "react-scripts test --passWithNoTests"
+    "test": "cross-env NODE_ENV=test jest"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/config/test/jest.setup.js"
+    ]
   },
   "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-2": "^6.24.1",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-stage-2": "^7.8.3",
+    "babel-loader": "^8.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "jest": "^26.0.1",
     "json-loader": "^0.5.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "4.42.0",
@@ -21,9 +32,11 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "express": "^4.14.0",
+    "babel-jest": "^26.0.1",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
