@@ -1,12 +1,15 @@
 language: node_js
 node_js:
-  - '10'
+  - "10"
 cache:
   npm: true
   yarn: true
   directories:
     - node_modules
 script:
+  - yarn test
+  - yarn test --coverage
+  - yarn build
   - npm run test
 deploy:
   - provider: pages
