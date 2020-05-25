@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anchor Component should render correctly and match snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`Anchor Component should render correctly and match snapshot with object destination 1`] = `ShallowWrapper {}`;
+
+exports[`Anchor Component should render correctly and match snapshot with object destination and no query param 1`] = `ShallowWrapper {}`;

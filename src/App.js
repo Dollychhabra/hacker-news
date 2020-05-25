@@ -1,8 +1,8 @@
 import React from 'react';
-import Hello from './components/organisms/Hello';
+import HomePage from './components/organisms/HomePage/HomePage';
 
 const App = () => {
-  return <Hello name="Dolly" />;
+  return <HomePage />;
 };
 
 export default App;
