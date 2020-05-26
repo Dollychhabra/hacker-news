@@ -30,7 +30,7 @@ const HomePage = ({ homePageData }) => {
       <div className="homepage-header flex align-center">
         <Anchor className="hompage-header-icon">
           <Image
-            src="y18.gif"
+            src="/images/logo.png"
             width="18"
             height="18"
             className="header-image"
