@@ -7,10 +7,7 @@ export default function renderFullPage(html, preloadedState) {
 
   const contentWithHtml = contents.replace(
     '<div id="root"></div>',
-    `<div id="root">${html}</div>
-     <script>
-            window.__STATE__ = ${JSON.stringify(preloadedState)}
-        </script>`,
+    `<div id="root">${html}</div>`,
   );
 
   return contentWithHtml.replace(
