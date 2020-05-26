@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import UpVote from '../UpVote';
+import Hide from '../Hide';
 
-describe('UnVote component', () => {
+describe('Hide component', () => {
   const props = {
-    vote: () => {},
-    objectId: '233456',
+    hideData: () => {},
+    objectId: '453534',
   };
 
   it('should render correctly and match snapshot', () => {
-    const component = shallow(<UpVote {...props} />);
+    const component = shallow(<Hide {...props} />);
     expect(component).toMatchSnapshot();
   });
 });

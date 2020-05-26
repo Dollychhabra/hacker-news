@@ -2,10 +2,11 @@ import {
   FETCH_HOME_PAGE_DATA,
   FETCH_HOME_PAGE_DATA_SUCCESS,
   FETCH_HOME_PAGE_DATA_ERROR,
-  HIDE_DATA
 } from './constants';
 
 import { VOTE } from '../../atoms/UpVote/constants';
+import { HIDE_DATA } from '../../atoms/Hide/constants';
+
 
 import homePageInitialState from '../../../commons/initialState/homePage.state';
 

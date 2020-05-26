@@ -14,7 +14,7 @@ const LoadMore = ({ currentPage, fetchHomePageData, totalPages }) => {
     isVisible(cp, totalPages) && (
       <div className="load-more sm-text-center md-text-initial">
         <Anchor
-          onClick={e => {
+          handleClick={e => {
             e.preventDefault();
             fetchHomePageData({ page: cp });
           }}

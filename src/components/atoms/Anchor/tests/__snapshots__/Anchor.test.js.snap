@@ -2,31 +2,10 @@
 
 exports[`Anchor Component should render correctly and match snapshot 1`] = `
 <a
-  className="cta"
-  data-hal-action-name="text: Sample"
+  className=""
   href="/"
   onClick={[Function]}
-  role="link"
->
-  Sample
-</a>
-`;
-
-exports[`Anchor Component should render correctly and match snapshot with object destination 1`] = `
-<a
-  className="cta"
-  data-hal-action-name="text: Sample"
-  href={
-    Object {
-      "pathname": "http://abc.com",
-      "query": Object {
-        "a": 1,
-        "b": 2,
-      },
-    }
-  }
-  onClick={null}
-  role="link"
+  target="_self"
 >
   Sample
 </a>
@@ -34,16 +13,9 @@ exports[`Anchor Component should render correctly and match snapshot with object
 
 exports[`Anchor Component should render correctly and match snapshot with object destination and no query param 1`] = `
 <a
-  className="cta"
-  data-hal-action-name="text: Sample"
-  href={
-    Object {
-      "pathname": "http://abc.com",
-      "query": null,
-    }
-  }
-  onClick={null}
-  role="link"
+  className=""
+  onClick={[Function]}
+  target="_self"
 >
   Sample
 </a>

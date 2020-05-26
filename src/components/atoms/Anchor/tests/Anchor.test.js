@@ -15,26 +15,11 @@ describe('Anchor Component', () => {
     anchor = shallow(<Anchor {...props} />);
     expect(anchor).toMatchSnapshot();
   });
-  test('should render correctly and match snapshot with object destination', () => {
-    const props = {
-      children: 'Sample',
-      to: {
-        pathname: 'http://abc.com',
-        query: {
-          a: 1,
-          b: 2,
-        },
-      },
-    };
-    anchor = shallow(<Anchor {...props} />);
-    expect(anchor).toMatchSnapshot();
-  });
   test('should render correctly and match snapshot with object destination and no query param', () => {
     const props = {
       children: 'Sample',
       to: {
         pathname: 'http://abc.com',
-        query: null,
       },
     };
     anchor = shallow(<Anchor {...props} />);

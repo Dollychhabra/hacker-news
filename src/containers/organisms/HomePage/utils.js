@@ -1,5 +1,5 @@
 import { LocalStorageUtil } from '../../../utils/localStorage';
-import { HIDE_DATA_KEY } from './constants';
+import { HIDE_DATA_KEY } from '../../atoms/Hide/constants';
 import { VOTE_KEY } from '../../atoms/UpVote/constants';
 
 export const removeHomePageData = (homePageState, objectID) => {

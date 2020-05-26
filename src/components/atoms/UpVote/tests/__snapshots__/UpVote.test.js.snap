@@ -3,9 +3,10 @@
 exports[`UnVote component should render correctly and match snapshot 1`] = `
 <Anchor
   className="up-vote-link"
+  handleClick={[Function]}
   onClick={[Function]}
-  role="link"
-  type=""
+  target="_self"
+  to=""
 >
   <div
     className="up-vote-arrow"

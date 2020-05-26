@@ -2,7 +2,7 @@ import { VOTE } from '../constants';
 
 import { vote } from '../actions';
 
-describe('VoteFeed Actions', () => {
+describe('Vote Actions', () => {
   const data = {
     objectId: '454567',
     voted: true,

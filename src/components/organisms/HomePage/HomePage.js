@@ -4,29 +4,36 @@ import Anchor from '../../atoms/Anchor/Anchor';
 import Image from '../../atoms/Image/Image';
 import Para from '../../atoms/Para/Para';
 import List from '../../molecules/List/List';
-import LoadMore from '../../atoms/LoadMore';
-import { getHoursFromISOString } from '../../../utils/dateTime';
-import PropTypes from 'prop-types';
+import timer from '../../../utils/dateTime';
+import { extractDomainFromUrl } from '../../../commons/utils/url';
+import {
+  filterDataWithHiddenData,
+  updateUpVoteInHomePageData,
+} from '../../../containers/organisms/HomePage/utils';
 import './HomePage.scss';
 import Vote from '../../../containers/atoms/UpVote/UpVote';
+import Hide from '../../../containers/atoms/Hide/Hide';
+import LoadMore from '../../../containers/atoms/LoadMore/LoadMore';
 
-const HomePage = ({ hideData, homePageData }) => {
+const HomePage = ({ homePageData }) => {
+  const filteredData = filterDataWithHiddenData(homePageData);
+  const votedData = updateUpVoteInHomePageData(filteredData);
+
+  const hits = votedData && votedData.hits ? votedData.hits : '';
 
   const anchorArray = [
     {
       name: 'top',
-      url: '/',
     },
     {
       name: 'new',
-      url: '/',
     },
   ];
 
   return (
     <div className="homepage">
       <div className="homepage-header flex align-center">
-        <Anchor to="/" className="hompage-header-icon">
+        <Anchor className="hompage-header-icon">
           <Image
             src="y18.gif"
             width="18"
@@ -39,8 +46,8 @@ const HomePage = ({ hideData, homePageData }) => {
         ))}
       </div>
       <List className="list-container">
-        {homePageData &&
-          homePageData.hits.map((item) => {
+        {hits &&
+          hits.map((item) => {
             return (
               <div className="list-content flex align-center">
                 <div className="comments">{item.num_comments}</div>
@@ -51,25 +58,16 @@ const HomePage = ({ hideData, homePageData }) => {
                 </div>
                 <Para className="story-details">
                   <span className="story-title">{item.title}</span>
-                  <Anchor
-                    to={item.url}
-                    className="story-url"
-                  >{`(${item.url})`}</Anchor>
+                  <span className="story-url">{`(${extractDomainFromUrl(
+                    item.url,
+                  )})`}</span>
                   <span className="keyword-by">by</span>
                   <span className="story-author">{item.author}</span>
                   <span className="story-time">
-                    {getHoursFromISOString(item.created_at)}
-                    <span className="hours-ago-keyword">hours ago</span>
+                    {timer(item.created_at_i)}
                   </span>
                   <span className="hide-brackets">[</span>
-                  <Anchor
-                    onClick={(e) => {
-                      e.preventDefault();
-                      hideData(item.objectId);
-                    }}
-                  >
-                    hide
-                  </Anchor>
+                  <Hide objectId={item.objectID} />
                   <span className="hide-brackets">]</span>
                 </Para>
               </div>
@@ -79,10 +77,6 @@ const HomePage = ({ hideData, homePageData }) => {
       <LoadMore />
     </div>
   );
-};
-
-HomePage.propTypes = {
-  hideData: PropTypes.func.isRequired,
 };
 
 export default HomePage;
