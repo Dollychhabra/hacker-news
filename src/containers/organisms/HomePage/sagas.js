@@ -3,14 +3,13 @@ import history from '../../../utils/history';
 
 import { fetchHomePageDataSuccess, fetchHomePageDataError } from './actions';
 
-import { FETCH_HOME_PAGE_DATA } from './constants';
+import { FETCH_HOME_PAGE_DATA, HIDE_DATA, HIDE_DATA_KEY } from './constants';
 
 import { HOME_PAGE_TAG } from '../../../commons/constants';
 import apis from '../../../commons/constants/api.services';
 
 import ServiceUtil from '../../../commons/utils/ServiceUtil';
 import { buildUrl } from '../../../commons/utils/url';
-import { HIDE_DATA, HIDE_DATA_KEY } from './constants';
 import { LocalStorageUtil } from '../../../utils/localStorage';
 
 export function* saveHideDataSaga(action) {
@@ -56,9 +55,14 @@ export function* loadHomePageSaga(action) {
   }
 }
 
-export function* homePageSaga() {
-  yield all([
-    takeLatest(FETCH_HOME_PAGE_DATA, loadHomePageSaga),
-    takeLatest(HIDE_DATA, saveHideDataSaga),
-  ]);
+export function* homePageDataSaga() {
+  yield takeLatest(FETCH_HOME_PAGE_DATA, loadHomePageSaga);
+}
+
+export function* hideDataSaga() {
+  yield takeLatest(HIDE_DATA, saveHideDataSaga);
+}
+
+export default function* homePageSaga() {
+  yield all([homePageDataSaga(), hideDataSaga()]);
 }
