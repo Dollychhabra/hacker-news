@@ -24,10 +24,17 @@
     }
 
     .header-container {
-      border-right: 1px solid $black;
       color: $black;
       margin-right: 0.5rem;
       padding-right: 0.5rem;
+    }
+
+    .header-container::after {
+      content: ' |';
+    }
+
+    .header-container:last-child::after {
+      content: '';
     }
   }
 
