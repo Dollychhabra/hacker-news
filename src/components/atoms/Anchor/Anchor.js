@@ -21,18 +21,6 @@ export const createUrlSearchParams = (query) => {
   return queryParams.join('&');
 };
 
-const buildUrl = (options) => {
-  if (typeof options === 'object') {
-    const { pathname, query } = options;
-    let url = pathname;
-    if (typeof query === 'object') {
-      url += `?${createUrlSearchParams(query)}`;
-    }
-    return url;
-  }
-  return options;
-};
-
 const Anchor = ({
   children,
   to,
