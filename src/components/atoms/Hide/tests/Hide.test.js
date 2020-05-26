@@ -2,10 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Hide from '../Hide';
 
-describe('HideFeed component', () => {
+describe('Hide component', () => {
   const props = {
     hideData: () => {},
-    objectId: '234534',
+    objectId: '453534',
   };
 
   it('should render correctly and match snapshot', () => {

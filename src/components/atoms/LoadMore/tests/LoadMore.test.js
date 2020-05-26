@@ -5,7 +5,7 @@ import LoadMore from '../LoadMore';
 describe('LoadMore component', () => {
   const props = {
     currentPage: 1,
-    fetchFeedListData: () => {},
+    fetchHomePageData: () => {},
     totalPages: 3,
   };
 

@@ -4,8 +4,8 @@ import UpVote from '../UpVote';
 
 describe('UnVote component', () => {
   const props = {
-    voteFeed: () => {},
-    objectId: '6382672',
+    vote: () => {},
+    objectId: '233456',
   };
 
   it('should render correctly and match snapshot', () => {

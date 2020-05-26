@@ -52,9 +52,9 @@ export class LocalStorageUtil {
    * @description - Saves Value in Array against key into localStorage
    */
   saveItemInArray = (key, value) => {
-    const feedIds = JSON.parse(this.getItem(key) || '[]');
-    feedIds.push(value);
-    this.saveItem(key, JSON.stringify(feedIds));
+    const ids = JSON.parse(this.getItem(key) || '[]');
+    ids.push(value);
+    this.saveItem(key, JSON.stringify(ids));
   };
 
   /**

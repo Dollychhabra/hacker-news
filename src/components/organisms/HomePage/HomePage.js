@@ -4,12 +4,12 @@ import Anchor from '../../atoms/Anchor/Anchor';
 import Image from '../../atoms/Image/Image';
 import Para from '../../atoms/Para/Para';
 import List from '../../molecules/List/List';
-import { getHoursFromISOString } from '../../../utils/dateTime';
+import timer from '../../../utils/dateTime';
 import { extractDomainFromUrl } from '../../../commons/utils/url';
 import {
   filterDataWithHiddenData,
   updateUpVoteInHomePageData,
-} from '../../../containers/organisms/homePage/utils';
+} from '../../../containers/organisms/HomePage/utils';
 import PropTypes from 'prop-types';
 import './HomePage.scss';
 import Vote from '../../../containers/atoms/UpVote/UpVote';
@@ -65,8 +65,7 @@ const HomePage = ({ homePageData }) => {
                   <span className="keyword-by">by</span>
                   <span className="story-author">{item.author}</span>
                   <span className="story-time">
-                    {getHoursFromISOString(item.created_at)}
-                    <span className="hours-ago-keyword">hours ago</span>
+                    {timer(item.created_at_i)}
                   </span>
                   <span className="hide-brackets">[</span>
                   <Hide objectId={item.objectID} />
