@@ -10,7 +10,6 @@ import {
   filterDataWithHiddenData,
   updateUpVoteInHomePageData,
 } from '../../../containers/organisms/HomePage/utils';
-import PropTypes from 'prop-types';
 import './HomePage.scss';
 import Vote from '../../../containers/atoms/UpVote/UpVote';
 import Hide from '../../../containers/atoms/Hide/Hide';
