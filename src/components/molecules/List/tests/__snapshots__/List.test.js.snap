@@ -1,3 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<List /> should render default view correctly 1`] = `ShallowWrapper {}`;
+exports[`<List /> should render default view correctly 1`] = `
+<ul
+  borderseparator={false}
+  className=""
+  inheritedStyles=""
+  inline={false}
+  nested={false}
+  nodefaultview={false}
+  nomargin={false}
+>
+  <li>
+    This is list item
+  </li>
+  <li>
+    This is list item
+  </li>
+</ul>
+`;

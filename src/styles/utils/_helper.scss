@@ -1,0 +1,40 @@
+@import './breakpoints';
+@import './colors';
+
+.full-width {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+@include desktop {
+  .lg-flex {
+    display: flex;
+  }
+}
+
+@include mobile {
+  .sm-block {
+    display: block;
+  }
+
+  .sm-text-center {
+    text-align: center;
+  }
+}
+
+@include tablet {
+  .md-inline {
+    display: inline;
+  }
+
+  .md-text-initial {
+    text-align: initial;
+  }
+}

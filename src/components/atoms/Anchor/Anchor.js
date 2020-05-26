@@ -8,7 +8,6 @@ const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   onClick: PropTypes.func,
-  iconOnly: PropTypes.bool,
   role: PropTypes.string,
 };
 
@@ -20,35 +19,6 @@ export const createUrlSearchParams = (query) => {
     queryParams.push(`${keys[i]}=${queryValue[keys[i]]}`);
   }
   return queryParams.join('&');
-};
-
-const buildUrl = (options) => {
-  if (typeof options === 'object') {
-    const { pathname, query } = options;
-    let url = pathname;
-    if (typeof query === 'object') {
-      url += `?${createUrlSearchParams(query)}`;
-    }
-    return url;
-  }
-  return options;
-};
-
-const getIcon = (iconProps, marginClassName) => {
-  return iconProps.type ? (
-    <Icon
-      className={classnames(
-        iconProps.className,
-        marginClassName,
-        iconProps.type,
-      )}
-      key={iconProps.type}
-      width={iconProps.width}
-      height={iconProps.height}
-      type={iconProps.type}
-      {...iconProps.attr}
-    />
-  ) : null;
 };
 
 const Anchor = ({
@@ -63,7 +33,7 @@ const Anchor = ({
   return (
     <a
       role={role}
-      href={buildUrl(to)}
+      href={to}
       className={classnames('cta', type, className)}
       onClick={onClick}
       data-hal-action-name={typeof children === 'string' && `text: ${children}`}
