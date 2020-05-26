@@ -1,26 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from '../../molecules/Header/Header';
 import Anchor from '../../atoms/Anchor/Anchor';
 import Image from '../../atoms/Image/Image';
 import Para from '../../atoms/Para/Para';
 import List from '../../molecules/List/List';
+import LoadMore from '../../atoms/LoadMore';
 import { getHoursFromISOString } from '../../../utils/dateTime';
-import axios from 'axios';
+import PropTypes from 'prop-types';
 import './HomePage.scss';
+import Vote from '../../../containers/atoms/UpVote/UpVote';
 
-const HomePage = (props) => {
-  const [data, setData] = useState({ hits: [] });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios('http://hn.algolia.com/api/v1/search');
-
-      console.log('res', result);
-
-      setData(result.data);
-    };
-    fetchData();
-  }, []);
+const HomePage = ({ hideData, homePageData }) => {
 
   const anchorArray = [
     {
@@ -49,13 +39,16 @@ const HomePage = (props) => {
         ))}
       </div>
       <List className="list-container">
-        {data &&
-          data.hits &&
-          data.hits.map((item) => {
+        {homePageData &&
+          homePageData.hits.map((item) => {
             return (
               <div className="list-content flex align-center">
                 <div className="comments">{item.num_comments}</div>
-                <div className="points">{item.points}</div>
+                <div className="points flex">
+                  {item.points}
+
+                  {!item.voted && <Vote objectId={item.objectID} />}
+                </div>
                 <Para className="story-details">
                   <span className="story-title">{item.title}</span>
                   <Anchor
@@ -69,15 +62,27 @@ const HomePage = (props) => {
                     <span className="hours-ago-keyword">hours ago</span>
                   </span>
                   <span className="hide-brackets">[</span>
-                  <span>hide</span>
+                  <Anchor
+                    onClick={(e) => {
+                      e.preventDefault();
+                      hideData(item.objectId);
+                    }}
+                  >
+                    hide
+                  </Anchor>
                   <span className="hide-brackets">]</span>
                 </Para>
               </div>
             );
           })}
       </List>
+      <LoadMore />
     </div>
   );
+};
+
+HomePage.propTypes = {
+  hideData: PropTypes.func.isRequired,
 };
 
 export default HomePage;

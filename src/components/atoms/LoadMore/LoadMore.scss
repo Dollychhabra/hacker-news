@@ -1,0 +1,17 @@
+@import '../../../styles/utils/colors';
+@import '../../../styles/utils/breakpoints';
+
+.load-more {
+  margin-top: 16px;
+
+  .load-more-link {
+    color: $orange;
+    font-size: 14px;
+    @include tablet {
+      margin-left: 141px;
+    }
+    @include desktop {
+      margin-left: 165px;
+    }
+  }
+}
