@@ -1,4 +1,4 @@
-import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import history from '../../../utils/history';
 
 import { fetchHomePageDataSuccess, fetchHomePageDataError } from './actions';
@@ -10,7 +10,6 @@ import apis from '../../../commons/constants/api.services';
 
 import ServiceUtil from '../../../commons/utils/ServiceUtil';
 import { buildUrl } from '../../../commons/utils/url';
-import { LocalStorageUtil } from '../../../utils/localStorage';
 
 const updateQueryParams = params => {
   if (history && Object.keys(params).indexOf('page') > -1) {
