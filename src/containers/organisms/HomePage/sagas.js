@@ -3,7 +3,7 @@ import history from '../../../utils/history';
 
 import { fetchHomePageDataSuccess, fetchHomePageDataError } from './actions';
 
-import { FETCH_HOME_PAGE_DATA, HIDE_DATA, HIDE_DATA_KEY } from './constants';
+import { FETCH_HOME_PAGE_DATA } from './constants';
 
 import { HOME_PAGE_TAG } from '../../../commons/constants';
 import apis from '../../../commons/constants/api.services';
@@ -11,14 +11,6 @@ import apis from '../../../commons/constants/api.services';
 import ServiceUtil from '../../../commons/utils/ServiceUtil';
 import { buildUrl } from '../../../commons/utils/url';
 import { LocalStorageUtil } from '../../../utils/localStorage';
-
-export function* saveHideDataSaga(action) {
-  const { data: objectId } = action;
-
-  const storage = new LocalStorageUtil();
-
-  storage.saveItemInArray(HIDE_DATA_KEY, objectId);
-}
 
 const updateQueryParams = params => {
   if (history && Object.keys(params).indexOf('page') > -1) {
@@ -55,14 +47,6 @@ export function* loadHomePageSaga(action) {
   }
 }
 
-export function* homePageDataSaga() {
+export function* homePageSaga() {
   yield takeLatest(FETCH_HOME_PAGE_DATA, loadHomePageSaga);
-}
-
-export function* hideDataSaga() {
-  yield takeLatest(HIDE_DATA, saveHideDataSaga);
-}
-
-export default function* homePageSaga() {
-  yield all([homePageDataSaga(), hideDataSaga()]);
 }
