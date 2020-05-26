@@ -47,6 +47,6 @@ export function* loadHomePageSaga(action) {
   }
 }
 
-export function* homePageSaga() {
+export default function* homePageSaga() {
   yield takeLatest(FETCH_HOME_PAGE_DATA, loadHomePageSaga);
 }
