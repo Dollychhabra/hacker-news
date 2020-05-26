@@ -8,7 +8,6 @@ const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   onClick: PropTypes.func,
-  iconOnly: PropTypes.bool,
   role: PropTypes.string,
 };
 
@@ -34,23 +33,6 @@ const buildUrl = (options) => {
   return options;
 };
 
-const getIcon = (iconProps, marginClassName) => {
-  return iconProps.type ? (
-    <Icon
-      className={classnames(
-        iconProps.className,
-        marginClassName,
-        iconProps.type,
-      )}
-      key={iconProps.type}
-      width={iconProps.width}
-      height={iconProps.height}
-      type={iconProps.type}
-      {...iconProps.attr}
-    />
-  ) : null;
-};
-
 const Anchor = ({
   children,
   to,
@@ -63,7 +45,7 @@ const Anchor = ({
   return (
     <a
       role={role}
-      href={buildUrl(to)}
+      href={to}
       className={classnames('cta', type, className)}
       onClick={onClick}
       data-hal-action-name={typeof children === 'string' && `text: ${children}`}

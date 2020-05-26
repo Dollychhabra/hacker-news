@@ -1,3 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Para Component should render correctly and match snapshot 1`] = `ShallowWrapper {}`;
+exports[`Para Component should render correctly and match snapshot 1`] = `
+<p
+  className=""
+>
+  This is Para text
+</p>
+`;

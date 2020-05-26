@@ -1,0 +1,12 @@
+# Don't lint the following
+coverage
+docs
+snapshots
+build
+public
+node_modules
+log
+logs
+stories
+!.storybook
+src/serviceWorker.js

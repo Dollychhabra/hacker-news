@@ -1,9 +1,103 @@
-.homepage-header {
-  display: flex;
-  padding-right: 1.5rem;
-  border-right: 1px solid black;
-  &:last-child {
-    padding-right: 0;
-    border-right: 0;
+@import '../../../styles/utils/colors';
+@import '../../../styles/utils/breakpoints';
+
+.homepage {
+  width: 100%;
+
+  .homepage-header {
+    background-color: $orange;
+    border-right: 1px solid $black;
+    display: flex;
+    padding: 1rem;
+
+    &:last-child {
+      border-right: 0;
+      padding-right: 0;
+    }
+
+    .hompage-header-icon {
+      padding: 0.5rem;
+      padding-right: 1rem;
+    }
+
+    .header-image {
+      border: 1px solid $white;
+    }
+
+    .header-container {
+      border-right: 1px solid $black;
+      color: $black;
+      margin-right: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+
+  .list-container {
+    background-color: $bg-color;
+    padding-top: 3rem;
+  }
+
+  .list-content:nth-child(even) {
+    background-color: $grey;
+  }
+
+  .list-content {
+    padding: 1rem;
+
+    .comments {
+      width: 30px;
+    }
+
+    .points {
+      padding: 0 1rem 0 4rem;
+      width: 45px;
+    }
+
+    .story-details {
+      font-size: 13px;
+      line-height: 1.5em;
+      word-break: break-word;
+    }
+
+    .story-title {
+      font-size: 1rem;
+    }
+
+    .story-url,
+    .keyword-by {
+      color: $secondary;
+    }
+
+    .keyword-by,
+    .story-author,
+    .story-time,
+    .hours-ago-keyword {
+      padding: 3px;
+    }
+
+    .story-time,
+    .hours-ago-keyword {
+      color: $secondary;
+    }
+
+    .hide-brackets {
+      color: $secondary;
+    }
+  }
+}
+
+@include tablet {
+  .homepage {
+    margin: 0 auto;
+
+    .list-content {
+      padding: 1rem 1rem 1rem 5rem;
+    }
+  }
+}
+
+@include desktop {
+  .homepage {
+    width: 85%;
   }
 }

@@ -1,7 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Anchor Component should render correctly and match snapshot 1`] = `ShallowWrapper {}`;
+exports[`Anchor Component should render correctly and match snapshot 1`] = `
+<a
+  className="cta"
+  data-hal-action-name="text: Sample"
+  href="/"
+  onClick={[Function]}
+  role="link"
+>
+  Sample
+</a>
+`;
 
-exports[`Anchor Component should render correctly and match snapshot with object destination 1`] = `ShallowWrapper {}`;
+exports[`Anchor Component should render correctly and match snapshot with object destination 1`] = `
+<a
+  className="cta"
+  data-hal-action-name="text: Sample"
+  href={
+    Object {
+      "pathname": "http://abc.com",
+      "query": Object {
+        "a": 1,
+        "b": 2,
+      },
+    }
+  }
+  onClick={null}
+  role="link"
+>
+  Sample
+</a>
+`;
 
-exports[`Anchor Component should render correctly and match snapshot with object destination and no query param 1`] = `ShallowWrapper {}`;
+exports[`Anchor Component should render correctly and match snapshot with object destination and no query param 1`] = `
+<a
+  className="cta"
+  data-hal-action-name="text: Sample"
+  href={
+    Object {
+      "pathname": "http://abc.com",
+      "query": null,
+    }
+  }
+  onClick={null}
+  role="link"
+>
+  Sample
+</a>
+`;
