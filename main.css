@@ -1,8 +1,0 @@
-.homepage-header {
-  display: flex;
-  padding-right: 1.5rem;
-  border-right: 1px solid black; }
-  .homepage-header:last-child {
-    padding-right: 0;
-    border-right: 0; }
-
