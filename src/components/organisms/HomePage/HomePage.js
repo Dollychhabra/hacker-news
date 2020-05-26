@@ -80,8 +80,4 @@ const HomePage = ({ homePageData }) => {
   );
 };
 
-HomePage.propTypes = {
-  hideData: PropTypes.func.isRequired,
-};
-
 export default HomePage;
