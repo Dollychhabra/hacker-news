@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadMore component should render correctly and match snapshot 1`] = `
+<div
+  className="load-more sm-text-center md-text-initial"
+>
+  <Anchor
+    className="load-more-link"
+    onClick={[Function]}
+    role="link"
+    type=""
+  >
+    More
+  </Anchor>
+</div>
+`;

@@ -2,7 +2,6 @@ import React from 'react';
 import Anchor from '../../atoms/Anchor/Anchor';
 
 const Header = (props) => {
-  console.log('props', props);
   const { item, className,style } = props;
   return (
     <React.Fragment>

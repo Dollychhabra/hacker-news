@@ -1,0 +1,12 @@
+@import '../../../styles/utils/colors';
+
+.up-vote-link {
+  margin-left: 6px;
+}
+
+.up-vote-arrow {
+  background: url('../../../images/grayarrow2x.png') center center no-repeat
+    $white;
+  height: 10px;
+  width: 10px;
+}

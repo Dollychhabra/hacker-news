@@ -1,0 +1,2 @@
+export const VOTE_KEY = 'HACKER_NEWS_APP/LIST/VOTE_KEY';
+export const VOTE = 'HACKER_NEWS_APP/LIST/VOTE';

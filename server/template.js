@@ -1,31 +1,22 @@
-// export default ({ body, title }) => {
-//   return `
-//     <!DOCTYPE html>
-//     <html>
-//       <head>
-//         <title>${title}</title>
-//         <link rel="stylesheet" href="./main.css">
-//       </head>
+import path from 'path';
+import fs from 'fs';
 
-//       <body>
-//         <div id="root">${body}</div>
-//       </body>
-//     </html>
-//   `;
-// };
+export default function renderFullPage(html, preloadedState) {
+  // TODO: Its a blocking file read, It should be async
+  const contents = fs.readFileSync(path.resolve('./build/index.html'), 'utf8');
 
-export default function renderFullPage({ body, title }) {
-  return `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>${title}</title>
-        <link rel="stylesheet" href="./src/index.scss">
-      </head>
-     
-      <body>
-        <div id="root">${body}</div>
-      </body>
-    </html>
-  `;
+  const contentWithHtml = contents.replace(
+    '<div id="root"></div>',
+    `<div id="root">${html}</div>
+     <script>
+            window.__STATE__ = ${JSON.stringify(preloadedState)}
+        </script>`,
+  );
+
+  return contentWithHtml.replace(
+    '<div id="initial-state"></div>',
+    ` <script>
+            window.__STATE__ = ${JSON.stringify(preloadedState)}
+        </script>`,
+  );
 }
