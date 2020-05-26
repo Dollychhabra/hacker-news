@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import Anchor from '../Anchor';
 import './UpVote.scss';
 
-const UpVote = ({ vote, objectId }) => {
-  return (
+const UpVote = ({ vote, objectId, voted }) => {
+  return voted ? (
+    ' '
+  ) : (
     <Anchor
       onClick={e => {
         e.preventDefault();
@@ -24,6 +26,11 @@ const UpVote = ({ vote, objectId }) => {
 UpVote.propTypes = {
   objectId: PropTypes.string.isRequired,
   vote: PropTypes.func.isRequired,
+  voted: PropTypes.bool,
+};
+
+UpVote.defaultProps = {
+  voted: false,
 };
 
 export default UpVote;

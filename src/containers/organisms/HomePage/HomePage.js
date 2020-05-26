@@ -14,10 +14,7 @@ export const mapDispatchToProps = dispatch => {
   return {
     fetchHomePageData: () => {
       dispatch(fetchHomePageData());
-    },
-    hideData: itemId => {
-      dispatch(hideData(itemId));
-    },
+    }
   };
 };
 

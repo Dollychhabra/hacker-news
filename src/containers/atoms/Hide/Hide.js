@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 
-import { vote } from './actions';
+import { hideData } from './actions';
 
-import UpVote from '../../../components/atoms/UpVote';
+import Hide from '../../../components/atoms/Hide';
 
 export const mapDispatchToProps = dispatch => {
   return {
-    vote: data => {
-      dispatch(vote(data));
+    hideData: itemId => {
+      dispatch(hideData(itemId));
     },
   };
 };
@@ -15,4 +15,4 @@ export const mapDispatchToProps = dispatch => {
 export default connect(
   null,
   mapDispatchToProps,
-)(UpVote);
+)(Hide);

@@ -6,9 +6,9 @@ exports[`LoadMore component should render correctly and match snapshot 1`] = `
 >
   <Anchor
     className="load-more-link"
-    onClick={[Function]}
-    role="link"
-    type=""
+    handleClick={[Function]}
+    target="_self"
+    to=""
   >
     More
   </Anchor>
