@@ -7,7 +7,7 @@
     "@babel/preset-react": "^7.9.4",
     "@babel/register": "^7.9.0",
     "babel-polyfill": "^6.26.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "es6-promise": "^4.2.8",
     "history": "^4.10.1",
     "ignore-styles": "^5.0.1",
