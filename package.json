@@ -41,7 +41,7 @@
     "husky": "^4.2.5",
     "ignore-styles": "^5.0.1",
     "jest-sonar-reporter": "^2.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prettier": "1.16.4",
     "prop-types": "^15.7.2",
     "stylelint": "^10.0.1",
